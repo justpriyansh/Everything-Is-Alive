@@ -12,10 +12,8 @@ public class Door : Interactable
         bool box = GameManager.instance.boxDone;
         bool chair = GameManager.instance.chairDone;
 
-        // 🔍 DEBUG (very important)
         Debug.Log("Clock: " + clock + " | Box: " + box + " | Chair: " + chair);
 
-        // ✅ ALL COMPLETED
         if (clock && box && chair)
         {
             if (!unlocked)
@@ -29,11 +27,10 @@ public class Door : Interactable
                     "Door: You may leave."
                 });
 
-                Invoke(nameof(OpenDoor), 1.5f); // delay feels better
+                Invoke(nameof(OpenDoor), 1.5f);
             }
             else
             {
-                // Already unlocked → just open
                 OpenDoor();
             }
         }
@@ -45,7 +42,6 @@ public class Door : Interactable
 
     void ShowLockedDialogue(bool clock, bool box, bool chair)
     {
-        // ❗ Show ALL missing tasks instead of just one
         string message = "Door:";
 
         if (!clock) message += "\n- Time is broken.";
