@@ -60,7 +60,6 @@ public class Door : Interactable
 
         transform.Rotate(0, 90, 0);
 
-        // Optional win trigger
         if (GameManager.instance != null)
         {
             GameManager.instance.WinGame();
